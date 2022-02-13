@@ -34,9 +34,9 @@ for i in $processed
      #mail=$(git log $i --format='%ae' -n1) && echo "Переименуй" | mail -s "Необходимо переименовать ветку $i" -a "Сервер через который пойдет письмо" -r *От какой почты письмо* "$mail" && echo "$i" >> exception.txt
    fi
    # Вычисляем время в Unix, когда последний раз обновлялась ветка
-   datecom=$(git log $i --format='%at' -n1 | awk "{NF--} 1")
+   datecom=$(git log $i --format='%at' -n1)
    #Если ветка не обновлялась более двух недель, то отсылаем письмо + убираем из обработки
-   if (( $date - $datecom  > 1209600 ))
+   if (( $date - $datecom > 1209600 ))
      then email2=$(git log $i --format='%ae' -n1) && echo "Время обновлять, письмо на $email2"
      #mail=$(git log $i --format='%ae' -n1) && echo "Необходимо обновить или удалить ветку $i" | mail -s "Обнови или удали $i" -a "Сервер через который пойдет письмо" -r *От какой почты письмо* "$mail" >> exception.txt
      #else echo "Еще не время обновлять"
