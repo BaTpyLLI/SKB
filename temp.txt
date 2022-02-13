@@ -1,15 +1,4 @@
 
 bugfix-task-123
 bugfix-task-555
-bugfix-task-aw
-develop-211
-feature-4444
 feature-task-4444
-origin/bugfix-task-123
-origin/bugfix-task-555
-origin/bugfix-task-aw
-origin/develop
-origin/develop-211
-origin/feature-4444
-origin/feature-task-4444
-origin/main
