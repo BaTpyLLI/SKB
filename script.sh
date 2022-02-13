@@ -11,8 +11,7 @@ echo "" > temp.txt
 #Убираем из обработки ветки, которые находятся в исключении
 for Z in $branch;
 do
-#echo "Значение $Z"
-  if echo ${exception[@]} | grep "$Z" ;
+  if echo ${exception[@]} | grep "$Z" > /dev/null ;
     then echo "$Z Имя ветки есть в исключениях, ничего не делаем"
     else echo "$Z" >> temp.txt #Заносим данные в файл, для дальнейшей обработки
   fi
